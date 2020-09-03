@@ -1,0 +1,23 @@
+mat-card {
+    max-width: 300px;
+    margin: 10px;
+
+    /* float: right; */
+    }
+    
+    .card-container {
+    display: flex;
+        flex-flow: row wrap;
+    }
+
+    .transaction-container mat-card{
+        width: 400px!important;
+    }
+
+    table {
+        width: 75%;
+      }
+
+      .transaction-table-container {
+        margin-left: 11px;
+    }

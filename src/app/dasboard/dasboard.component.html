@@ -1,0 +1,48 @@
+<div class="card-container">
+    <mat-card>
+        <mat-card-title>Total Transaction Amount</mat-card-title>
+        <mat-card-content>{{totalAmount===0?'-':totalAmount}}</mat-card-content>
+
+    </mat-card>
+    <mat-card>
+        <mat-card-title>No of Transaction</mat-card-title>
+        <mat-card-content>{{transactionCount===0?'-':transactionCount}}</mat-card-content>
+    </mat-card>
+</div>
+
+<div class="transaction-container">
+    <mat-card>
+        <app-transaction></app-transaction>
+    </mat-card>
+</div>
+
+<div class="transaction-table-container">
+    <!-- <mat-card>  -->
+    <mat-card-title>Transactions</mat-card-title>
+    <mat-card-content>
+        <table mat-table [dataSource]="transactionList" class="mat-elevation-z8">
+            <!-- Name Column -->
+            <ng-container matColumnDef="destination">
+                <th mat-header-cell *matHeaderCellDef> Destination </th>
+                <td mat-cell *matCellDef="let element"> {{element.destination}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="amount">
+                <th mat-header-cell *matHeaderCellDef> Amount </th>
+                <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </mat-card-content>
+    <!-- </mat-card>
+</div> -->
+</div>

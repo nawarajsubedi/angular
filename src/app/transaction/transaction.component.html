@@ -1,0 +1,19 @@
+<mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h2>Make Transaction</h2>
+
+        <mat-form-field class="full-width-input">
+            <input matInput placeholder="Send to.." formControlName="destination" value="9841014955" required>
+            <mat-error>
+                Valid destination required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+            <input matInput type="number" placeholder="amount" formControlName="amount" required>
+            <mat-error>
+                Valid amount required
+            </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Send</button>
+    </form>
+</mat-card-content>

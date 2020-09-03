@@ -1,0 +1,89 @@
+<mat-toolbar color="primary" class="expanded-toolbar">
+  <span>
+    <button mat-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-button routerLink="/">{{title}}</button>
+
+  </span>
+  <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <button mat-button routerLink="/login" *ngIf="!isAuthenticated">
+      <mat-icon>power_settings_new</mat-icon>
+      Login
+    </button>
+    <button mat-button *ngIf="isAuthenticated" (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      Logout
+    </button>
+    <button mat-button routerLink="/register" *ngIf="!isAuthenticated">
+      <mat-icon></mat-icon>
+      Register
+    </button>
+
+    <button mat-button routerLink="/register" *ngIf="isAuthenticated">
+      <mat-icon></mat-icon>
+      Hi, {{user}}
+    </button>
+  </div>
+  <!-- <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+    <mat-icon>menu</mat-icon>
+  </button> -->
+</mat-toolbar>
+
+<mat-sidenav-container class="example-sidenav-container">
+  <mat-sidenav fixedTopGap="56" #snav>
+    <mat-nav-list>
+      <a mat-list-item routerLink=".">Menu 1</a>
+      <a mat-list-item routerLink=".">Menu 1</a>
+      <a mat-list-item routerLink=".">Menu 1</a>
+      <a mat-list-item routerLink=".">Menu 1</a>
+      <a mat-list-item routerLink=".">Menu 1</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <mat-menu x-position="before" #menu="matMenu">
+  <button mat-menu-item routerLink="/">
+    <mat-icon>home</mat-icon>
+    Home
+  </button>
+  <button mat-menu-item routerLink="/game">
+    <mat-icon>gamepad</mat-icon>
+    Play
+  </button>
+  <button mat-menu-item routerLink="/login" *ngIf="!isAuthenticated">
+    <mat-icon>power_settings_new</mat-icon>
+    Login
+  </button>
+  <button mat-menu-item *ngIf="isAuthenticated" (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon>
+    Logout
+  </button>
+</mat-menu> -->
+<!-- 
+<div class="example-container">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">Responsive App</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav fixedTopGap="56">
+      <mat-nav-list>
+        <a mat-list-item routerLink=".">Menu 1</a>
+        <a mat-list-item routerLink=".">Menu 1</a>
+        <a mat-list-item routerLink=".">Menu 1</a>
+        <a mat-list-item routerLink=".">Menu 1</a>
+        <a mat-list-item routerLink=".">Menu 1</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div> -->
+
+<router-outlet></router-outlet>
