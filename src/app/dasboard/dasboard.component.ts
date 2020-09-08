@@ -51,6 +51,7 @@ export class DasboardComponent implements OnInit, OnDestroy {
       // console.log('before tran:', transaction)
 
       this.transactionList = [...this.transactionList, transaction]
+      // this.transactionList.push(transaction);
 
       // console.log('tran list:', this.transactionList)
     });
